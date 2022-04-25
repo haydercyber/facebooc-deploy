@@ -2,7 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: facebooc
-  namespace: flux-system
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
@@ -16,6 +15,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: "16000"
+            name: facebooc
             port:
               number: 16000
