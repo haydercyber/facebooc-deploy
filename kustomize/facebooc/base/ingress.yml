@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: facebooc
+  namespace: flux-system
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+  - secretName: tls-secret
+  rules:
+  - host: "facebooc.tibchannels.com"
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: "16000"
+            port:
+              number: 16000

@@ -13,6 +13,3 @@ spec:
     targetPort: 16000
   selector:
     app: facebooc
-  type: NodePort
-status:
-  loadBalancer: {}
